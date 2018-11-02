@@ -1,0 +1,12 @@
+C:\Users\rademacher\source\repos\MyApplication\MyApplication\bin\Debug\MyApplication.exe.config
+C:\Users\rademacher\source\repos\MyApplication\MyApplication\bin\Debug\MyApplication.exe
+C:\Users\rademacher\source\repos\MyApplication\MyApplication\bin\Debug\MyApplication.pdb
+C:\Users\rademacher\source\repos\MyApplication\MyApplication\obj\Debug\MyApplication.csprojAssemblyReference.cache
+C:\Users\rademacher\source\repos\MyApplication\MyApplication\obj\Debug\MyApplication.Properties.Resources.resources
+C:\Users\rademacher\source\repos\MyApplication\MyApplication\obj\Debug\MyApplication.csproj.GenerateResource.cache
+C:\Users\rademacher\source\repos\MyApplication\MyApplication\obj\Debug\MyApplication.csproj.CoreCompileInputs.cache
+C:\Users\rademacher\source\repos\MyApplication\MyApplication\obj\Debug\MyApplication.exe
+C:\Users\rademacher\source\repos\MyApplication\MyApplication\obj\Debug\MyApplication.pdb
+C:\Users\rademacher\source\repos\MyApplication\MyApplication\obj\Debug\MyApplication.LoginScreen.resources
+C:\Users\rademacher\source\repos\MyApplication\MyApplication\obj\Debug\MyApplication.MainScreen.resources
+C:\Users\rademacher\source\repos\MyApplication\MyApplication\obj\Debug\MyApplication.NewAccount.resources
