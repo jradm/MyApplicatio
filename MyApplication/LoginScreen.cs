@@ -35,8 +35,8 @@ namespace MyApplication
             {
                 //MessageBox.Show("You are logged in successfully!");
                 //this.Hide();
-                MainScreen m = new MainScreen();
-                m.Show();
+                MainScreen mainScreen = new MainScreen();
+                mainScreen.Show();
                 
                 //this.Close();
             }
@@ -49,8 +49,8 @@ namespace MyApplication
 
         private void linkLabelNewAccount_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            NewAccount n = new NewAccount();
-            n.Show();
+            NewAccount newAccount = new NewAccount();
+            newAccount.Show();
         }
     }
 }

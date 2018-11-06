@@ -21,5 +21,29 @@ namespace MyApplication
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Reservations reservations = new Reservations();
+            reservations.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Arrivals arrivals = new Arrivals();
+            arrivals.Show();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Inhouse inhouse = new Inhouse();
+            inhouse.Show();
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            Departures departures = new Departures();
+            departures.Show();
+        }
     }
 }

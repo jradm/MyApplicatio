@@ -46,6 +46,38 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ApplicationDataSet1.cs">
+      <DependentUpon>ApplicationDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ApplicationDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ApplicationDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Arrivals.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Arrivals.Designer.cs">
+      <DependentUpon>Arrivals.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Departures.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Departures.Designer.cs">
+      <DependentUpon>Departures.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Inhouse.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Inhouse.Designer.cs">
+      <DependentUpon>Inhouse.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reservations.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reservations.Designer.cs">
+      <DependentUpon>Reservations.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs" />
     <Compile Include="LoginScreen.cs">
       <SubType>Form</SubType>
@@ -85,6 +117,20 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Reservations.resx">
+      <DependentUpon>Reservations.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="ApplicationDataSet1.xsc">
+      <DependentUpon>ApplicationDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="ApplicationDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ApplicationDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ApplicationDataSet1.xss">
+      <DependentUpon>ApplicationDataSet1.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
