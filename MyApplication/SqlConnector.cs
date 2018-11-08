@@ -9,19 +9,19 @@ namespace MyApplication
 {
     public class SqlConnection
     {
-        string ConnectionString = null;
-        SqlConnection Con;
-        ConnectionString = "Data Source=localhost;Initial Catalog=Application;User ID=user;Password=pass";
-            Con = new SqlConnection(ConnectionString);
-            try
-            {
-                cnn.Open();
-                MessageBox.Show("Connection Open ! ");
-                
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Can not open connection ! ");
-            }
+        //    string ConnectionString = null;
+        //    SqlConnection Con;
+        //    ConnectionString = "Data Source=localhost;Initial Catalog=Application;User ID=user;Password=pass";
+        //        Con = new SqlConnection(ConnectionString);
+        //        try
+        //        {
+        //            cnn.Open();
+        //            MessageBox.Show("Connection Open ! ");
+
+        //        }
+        //        catch (Exception ex)
+        //        {
+        //            MessageBox.Show("Can not open connection ! ");
+        //        }
     }
 }
