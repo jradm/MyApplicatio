@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Configuration;
 using System.Data.SqlClient;
+using MySql.Data.MySqlClient;
 
 namespace MyApplication
 {
@@ -31,17 +32,44 @@ namespace MyApplication
                 MySqlConnector.ConnectMySql();
 
                 //TODO: MySQL Login
+                MySqlConnection Con = new MySqlConnection("server=localhost;user id=user;password=pass;database=application");
+                MySqlCommand cmd = new MySqlCommand("select count(*) from application.user where username = '" + textBoxUser.Text + "'and password = '" + textBoxPassword.Text + "'", Con);
+                MySqlDataAdapter dataAdapter = new MySqlDataAdapter(cmd);
+                DataTable dataTable = new DataTable();
+                dataAdapter.Fill(dataTable);
+
+                try
+                {
+                    if (dataTable.Rows[0][0].ToString() == "1")
+                    {
+
+                        MessageBox.Show("Login successful!");
+
+                        MainScreen mainScreen = new MainScreen();
+                        mainScreen.Show();
+                    }
+
+                    else
+                    {
+                        MessageBox.Show("Login invalid!");
+                    }
+
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show("MySql Error: " + ex);
+                }
+
             }
             if (checkedListBox1.SelectedItem.Equals("SQL DB"))
             {
                 //SQL DB Connection
                 SqlConnector SqlConnector = new SqlConnector();
                 SqlConnector.ConnectSql();
-             
-                string Username = textBoxUser.Text;
-                string Password = textBoxPassword.Text;
 
-                SqlDataAdapter dataAdapter = new SqlDataAdapter("select count(*) from User where Username = " + Username + " and Password = " + Password + ";");
+                SqlConnection Con = new SqlConnection("Data Source=localhost;Initial Catalog=Application;User=dbuser;Password=dbpass");
+                SqlCommand cmd = new SqlCommand("select count(*) from User where Username = " + textBoxUser.Text + " and Password = " + textBoxPassword.Text + "", Con);
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(cmd);
                 DataTable dataTable = new DataTable();
                 dataAdapter.Fill(dataTable);
                 if (dataTable.Rows[0][0].ToString() == "1")

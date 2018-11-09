@@ -39,12 +39,11 @@
             this.buttonLogin = new System.Windows.Forms.Button();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.applicationDataSet = new MyApplication.ApplicationDataSet();
-            this.userTableAdapter = new MyApplication.ApplicationDataSetTableAdapters.UserTableAdapter();
+          
             this.textBoxUser = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.applicationDataSet)).BeginInit();
+            
             this.SuspendLayout();
             // 
             // panel1
@@ -142,16 +141,11 @@
             // userBindingSource
             // 
             this.userBindingSource.DataMember = "User";
-            this.userBindingSource.DataSource = this.applicationDataSet;
-            // 
-            // applicationDataSet
-            // 
-            this.applicationDataSet.DataSetName = "ApplicationDataSet";
-            this.applicationDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+          
             // 
             // userTableAdapter
             // 
-            this.userTableAdapter.ClearBeforeFill = true;
+           
             // 
             // textBoxUser
             // 
@@ -171,7 +165,7 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.applicationDataSet)).EndInit();
+           
             this.ResumeLayout(false);
 
         }
@@ -186,9 +180,9 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
-        private ApplicationDataSet applicationDataSet;
+       
         private System.Windows.Forms.BindingSource userBindingSource;
-        private ApplicationDataSetTableAdapters.UserTableAdapter userTableAdapter;
+      
         public System.Windows.Forms.TextBox textBoxPassword;
         public System.Windows.Forms.TextBox textBoxUser;
     }
