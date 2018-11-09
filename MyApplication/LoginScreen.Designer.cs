@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.textBoxUser = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -39,11 +40,8 @@
             this.buttonLogin = new System.Windows.Forms.Button();
             this.textBoxPassword = new System.Windows.Forms.TextBox();
             this.userBindingSource = new System.Windows.Forms.BindingSource(this.components);
-          
-            this.textBoxUser = new System.Windows.Forms.TextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).BeginInit();
-            
             this.SuspendLayout();
             // 
             // panel1
@@ -61,6 +59,13 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(432, 288);
             this.panel1.TabIndex = 0;
+            // 
+            // textBoxUser
+            // 
+            this.textBoxUser.Location = new System.Drawing.Point(62, 34);
+            this.textBoxUser.Name = "textBoxUser";
+            this.textBoxUser.Size = new System.Drawing.Size(100, 20);
+            this.textBoxUser.TabIndex = 9;
             // 
             // label3
             // 
@@ -101,6 +106,7 @@
             // 
             // checkedListBox1
             // 
+            this.checkedListBox1.AccessibleRole = System.Windows.Forms.AccessibleRole.Application;
             this.checkedListBox1.FormattingEnabled = true;
             this.checkedListBox1.Items.AddRange(new object[] {
             "SQL DB",
@@ -141,18 +147,6 @@
             // userBindingSource
             // 
             this.userBindingSource.DataMember = "User";
-          
-            // 
-            // userTableAdapter
-            // 
-           
-            // 
-            // textBoxUser
-            // 
-            this.textBoxUser.Location = new System.Drawing.Point(62, 34);
-            this.textBoxUser.Name = "textBoxUser";
-            this.textBoxUser.Size = new System.Drawing.Size(100, 20);
-            this.textBoxUser.TabIndex = 9;
             // 
             // LoginScreen
             // 
@@ -165,7 +159,6 @@
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.userBindingSource)).EndInit();
-           
             this.ResumeLayout(false);
 
         }

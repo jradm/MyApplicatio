@@ -47,6 +47,8 @@ namespace MyApplication
 
                         MainScreen mainScreen = new MainScreen();
                         mainScreen.Show();
+
+                        this.Hide();
                     }
 
                     else
@@ -78,6 +80,8 @@ namespace MyApplication
 
                     MainScreen mainScreen = new MainScreen();
                     mainScreen.Show();
+
+                    this.Hide();
                 }
                 else
                 {
