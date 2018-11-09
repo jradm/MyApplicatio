@@ -22,16 +22,17 @@ namespace MyApplication
         }
 
         //rufe Login function auf
-        Login Login = new Login("user","pass");
-
+        //Login Login = new Login("user","pass");
+        
         private void ButtonLogin_Click(object sender, EventArgs e)
         {
             //variables for user input
             string user = textBoxUser.Text;
             string pass = textBoxPassword.Text;
+            
 
             //check if eligible to be logged in
-            if(Login.IsLoggedIn(user, pass))
+            if(Login.IsLoggedIn = true)
             {
                 //MessageBox.Show("You are logged in successfully!");
                 //this.Hide();

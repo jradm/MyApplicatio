@@ -46,20 +46,20 @@ namespace MyApplication
         }
 
         //check if eligible to login
-        internal bool IsLoggedIn(string user, string pass)
+        internal bool IsLoggedIn()
         {
             //check user name empty
-            if (string.IsNullOrEmpty(user))
+            if (string.IsNullOrEmpty(Username))
             {
                 MessageBox.Show("Enter Username!");
                 return false;
             }
 
             //check is valid type
-            else if (StringValidator(user) == true)
+            else if (StringValidator(Username) == true)
             {
                 MessageBox.Show("Enter only Text!");
-                ClearTexts(user, pass);
+                ClearTexts(Username, Password);
                 return false;
             }
 
