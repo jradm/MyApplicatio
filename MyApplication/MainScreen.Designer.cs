@@ -29,16 +29,18 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.ButtonExit = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.ButtonExit = new System.Windows.Forms.Button();
+            this.ButtonNewReservation = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.ButtonNewReservation);
             this.panel1.Controls.Add(this.ButtonExit);
             this.panel1.Controls.Add(this.button4);
             this.panel1.Controls.Add(this.button3);
@@ -48,6 +50,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(794, 435);
             this.panel1.TabIndex = 0;
+            // 
+            // ButtonExit
+            // 
+            this.ButtonExit.Location = new System.Drawing.Point(643, 382);
+            this.ButtonExit.Name = "ButtonExit";
+            this.ButtonExit.Size = new System.Drawing.Size(75, 23);
+            this.ButtonExit.TabIndex = 4;
+            this.ButtonExit.Text = "Exit";
+            this.ButtonExit.UseVisualStyleBackColor = true;
+            this.ButtonExit.Click += new System.EventHandler(this.ButtonExit_Click);
             // 
             // button4
             // 
@@ -89,15 +101,15 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // ButtonExit
+            // ButtonNewReservation
             // 
-            this.ButtonExit.Location = new System.Drawing.Point(643, 382);
-            this.ButtonExit.Name = "ButtonExit";
-            this.ButtonExit.Size = new System.Drawing.Size(75, 23);
-            this.ButtonExit.TabIndex = 4;
-            this.ButtonExit.Text = "Exit";
-            this.ButtonExit.UseVisualStyleBackColor = true;
-            this.ButtonExit.Click += new System.EventHandler(this.ButtonExit_Click);
+            this.ButtonNewReservation.Location = new System.Drawing.Point(26, 161);
+            this.ButtonNewReservation.Name = "ButtonNewReservation";
+            this.ButtonNewReservation.Size = new System.Drawing.Size(86, 79);
+            this.ButtonNewReservation.TabIndex = 5;
+            this.ButtonNewReservation.Text = "Create new reservation";
+            this.ButtonNewReservation.UseVisualStyleBackColor = true;
+            this.ButtonNewReservation.Click += new System.EventHandler(this.ButtonNewReservation_Click);
             // 
             // MainScreen
             // 
@@ -121,5 +133,6 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button ButtonExit;
+        private System.Windows.Forms.Button ButtonNewReservation;
     }
 }

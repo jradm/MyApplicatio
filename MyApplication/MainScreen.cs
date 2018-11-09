@@ -53,5 +53,10 @@ namespace MyApplication
             //this.Close();
             Application.Exit();
         }
+
+        private void ButtonNewReservation_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
