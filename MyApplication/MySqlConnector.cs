@@ -2,6 +2,9 @@
 using System.Windows;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.Data;
+using System.Linq;
+using System.Text;
 
 
 namespace MyApplication
@@ -9,47 +12,30 @@ namespace MyApplication
 
     public partial class MySqlConnector
     {
-        private MySqlConnection connection;
-        private string server;
-        private string database;
-        private string user;
-        private string password;
-        private string port;
-        private string connectionString;
-        private string sslM;
+        MySqlConnection Con = new MySqlConnection(@"Data Source=localhost;port=3306;Initial Catalog=testdb;User=user;Password=pass");
 
-        public MySqlConnector()
-        {
-            server = "localhost";
-            database = "testdb";
-            user = "root";
-            password = "5edd4dXm0";
-            port = "3306";
-            sslM = "none";
-
-            connectionString = String.Format("server={0};port={1};user id={2}; password={3}; database={4}; SslMode={5}", server, port, user, password, database, sslM);
-
-            connection = new MySqlConnection(connectionString);
-        }
-
-        private void connect()
+        public void ConnectMySql()
         {
             try
             {
-                connection.Open();
-
-                MessageBox.Show("successful connection");
-
+                Con.Open();
             }
-            catch (MySqlException ex)
+            catch(MySqlException e)
             {
-                MessageBox.Show(ex.Message + connectionString);
+                MessageBox.Show("MySQL Error:" + e);
             }
         }
 
-        internal class disconnet : MySqlConnector
+        public void DisconnectMySql()
         {
-            MySqlConnection GetConnection;
+            try
+            {
+                Con.Close();
+            }
+            catch (MySqlException e)
+            {
+                MessageBox.Show("MySQL Error:" + e);
+            }
         }
-    }
+    }    
 }

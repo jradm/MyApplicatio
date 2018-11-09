@@ -11,21 +11,35 @@ using System.Data.SqlClient;
 
 namespace MyApplication
 {
-    public class SqlConnection
+    public class SqlConnector
     {
-        //    string ConnectionString = null;
-        //    SqlConnection Con;
-        //    ConnectionString = "Data Source=localhost;Initial Catalog=Application;User ID=user;Password=pass";
-        //        Con = new SqlConnection(ConnectionString);
-        //        try
-        //        {
-        //            cnn.Open();
-        //            MessageBox.Show("Connection Open ! ");
+        //string ConnectionString = "Data Source=localhost;Initial Catalog=Application;User=user;Password=pass";
+        SqlConnection Con = new SqlConnection("Data Source=localhost;Initial Catalog=Application;User=dbuser;Password=dbpass");
+        //Con ConnectionString = "Data Source=localhost;Initial Catalog=Application;User=user;Password=pass";
 
-        //        }
-        //        catch (Exception ex)
-        //        {
-        //            MessageBox.Show("Can not open connection ! ");
-        //        }
+        public void ConnectSql()
+        {
+            try
+            {
+                Con.Open();
+
+            }
+            catch (SqlException e)
+            {
+                MessageBox.Show("SQL Error:" + e);
+            }
+        }
+
+        public void DisconnectMySql()
+        {
+            try
+            {
+                Con.Close();
+            }
+            catch (SqlException e)
+            {
+                MessageBox.Show("SQL Error:" + e);
+            }
+        }
     }
 }

@@ -48,9 +48,10 @@ namespace MyApplication
 
         public void ButtonExit_Click(object sender, EventArgs e)
         {
-            MySqlConnector mySqlConnector = new MySqlConnector.disconnet();
-            this.Close();
-            Application.OpenForms[0].FormClosed();
+            MySqlConnector MySqlConnector = new MySqlConnector();
+            MySqlConnector.DisconnectMySql();
+            //this.Close();
+            Application.Exit();
         }
     }
 }

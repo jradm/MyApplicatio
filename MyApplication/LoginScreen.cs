@@ -7,44 +7,58 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Configuration;
+using System.Data.SqlClient;
 
 namespace MyApplication
 {
     public partial class LoginScreen : Form
     {
 
-        public string Username { get; set; }
-        public string Password { get; set; }
-
         public LoginScreen()
         {
             InitializeComponent();
         }
 
-        //rufe Login function auf
-        //Login Login = new Login("user","pass");
-        
+               
         private void ButtonLogin_Click(object sender, EventArgs e)
         {
-            //variables for user input
-            string user = textBoxUser.Text;
-            string pass = textBoxPassword.Text;
-            
 
-            //check if eligible to be logged in
-            if(Login.IsLoggedIn = true)
+            if (checkedListBox1.SelectedItem.Equals("MySQL DB"))
             {
-                //MessageBox.Show("You are logged in successfully!");
-                //this.Hide();
-                MainScreen mainScreen = new MainScreen();
-                mainScreen.Show();
-                
-                //this.Close();
+                //MySQL DB Connection
+                MySqlConnector MySqlConnector  = new MySqlConnector();
+                MySqlConnector.ConnectMySql();
+
+                //TODO: MySQL Login
             }
-            else
+            if (checkedListBox1.SelectedItem.Equals("SQL DB"))
             {
-                //show default fail
-                MessageBox.Show("Login Error!");
+                //SQL DB Connection
+                SqlConnector SqlConnector = new SqlConnector();
+                SqlConnector.ConnectSql();
+             
+                string Username = textBoxUser.Text;
+                string Password = textBoxPassword.Text;
+
+                SqlDataAdapter dataAdapter = new SqlDataAdapter("select count(*) from User where Username = " + Username + " and Password = " + Password + ";");
+                DataTable dataTable = new DataTable();
+                dataAdapter.Fill(dataTable);
+                if (dataTable.Rows[0][0].ToString() == "1")
+                {
+                    MessageBox.Show("Login successful!");
+
+                    MainScreen mainScreen = new MainScreen();
+                    mainScreen.Show();
+                }
+                else
+                {
+                    MessageBox.Show("Login invalid!");
+                }
+            }
+            if (checkedListBox1.SelectedItem.Equals(null))
+            {
+                MessageBox.Show("something went wrong!");
             }
         }
 
@@ -53,5 +67,12 @@ namespace MyApplication
             NewAccount newAccount = new NewAccount();
             newAccount.Show();
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+       
     }
 }

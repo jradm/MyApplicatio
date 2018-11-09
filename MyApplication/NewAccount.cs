@@ -18,8 +18,6 @@ namespace MyApplication
             InitializeComponent();
         }
 
-        string Conn = ("Data Source=localhost;Initial Catalog=Application;User ID=dbuser;Password=dbpass");
-
         private void Button1_Click(object sender, EventArgs e)
         {
             try
