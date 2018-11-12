@@ -21,61 +21,25 @@ namespace MyApplication
             InitializeComponent();
         }
 
-               
+
         private void ButtonLogin_Click(object sender, EventArgs e)
         {
+            //MySQL DB Connection
+            MySqlConnector MySqlConnector = new MySqlConnector();
+            MySqlConnector.ConnectMySql();
 
-            if (checkedListBox1.SelectedItem.Equals("MySQL DB"))
+            //MySQL Login
+            MySqlConnection Con = new MySqlConnection("server=localhost;user id=user;password=pass;database=application");
+            MySqlCommand cmd = new MySqlCommand("select count(*) from application.user where username = '" + textBoxUser.Text + "'and password = '" + textBoxPassword.Text + "'", Con);
+            MySqlDataAdapter dataAdapter = new MySqlDataAdapter(cmd);
+            DataTable dataTable = new DataTable();
+            dataAdapter.Fill(dataTable);
+
+            try
             {
-                //MySQL DB Connection
-                MySqlConnector MySqlConnector  = new MySqlConnector();
-                MySqlConnector.ConnectMySql();
-
-                //MySQL Login
-                MySqlConnection Con = new MySqlConnection("server=localhost;user id=user;password=pass;database=application");
-                MySqlCommand cmd = new MySqlCommand("select count(*) from application.user where username = '" + textBoxUser.Text + "'and password = '" + textBoxPassword.Text + "'", Con);
-                MySqlDataAdapter dataAdapter = new MySqlDataAdapter(cmd);
-                DataTable dataTable = new DataTable();
-                dataAdapter.Fill(dataTable);
-
-                try
+                if (dataTable.Rows[0][0].ToString() == "1")
                 {
-                    if (dataTable.Rows[0][0].ToString() == "1")
-                    {
 
-                        MessageBox.Show("Login successful!");
-
-                        MainScreen mainScreen = new MainScreen();
-                        mainScreen.Show();
-
-                        this.Hide();
-                    }
-
-                    else
-                    {
-                        MessageBox.Show("Login invalid!");
-                    }
-
-                }
-                catch (MySqlException ex)
-                {
-                    MessageBox.Show("MySql Error: " + ex);
-                }
-
-            }
-            if (checkedListBox1.SelectedItem.Equals("SQL DB"))
-            {
-                //SQL DB Connection
-                SqlConnector SqlConnector = new SqlConnector();
-                SqlConnector.ConnectSql();
-
-                SqlConnection Con = new SqlConnection("Data Source=localhost;Initial Catalog=Application;User=dbuser;Password=dbpass");
-                SqlCommand cmd = new SqlCommand("select count(*) from [Application].[dbo].[User] where Username = '"+ textBoxUser.Text +"' and Password = '"+ textBoxPassword.Text + "'", Con);
-                SqlDataAdapter dataAdapter = new SqlDataAdapter(cmd);
-                cmd.Connection.Open();
-                SqlDataReader reader = cmd.ExecuteReader(CommandBehavior.CloseConnection);
-                if (reader.Read() == true)
-                {
                     MessageBox.Show("Login successful!");
 
                     MainScreen mainScreen = new MainScreen();
@@ -83,28 +47,28 @@ namespace MyApplication
 
                     this.Hide();
                 }
+
                 else
                 {
                     MessageBox.Show("Login invalid!");
                 }
+
             }
-            if (checkedListBox1.SelectedItem.Equals(null))
+            catch (MySqlException ex)
             {
-                MessageBox.Show("something went wrong!");
+                MessageBox.Show("MySql Error: " + ex);
             }
         }
 
-        private void linkLabelNewAccount_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
-        {
-            NewAccount newAccount = new NewAccount();
-            newAccount.Show();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
+        private void ButtonExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-       
-    }
+        private void CreateNewAccount_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            NewAccount newAccount = new NewAccount();
+            newAccount.Show();
+        }
+    }   
 }

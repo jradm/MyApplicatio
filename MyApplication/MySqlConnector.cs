@@ -12,7 +12,7 @@ namespace MyApplication
 
     public partial class MySqlConnector
     {
-        MySqlConnection Con = new MySqlConnection(@"Data Source=localhost;port=3306;Initial Catalog=testdb;User=user;Password=pass");
+        MySqlConnection Con = new MySqlConnection(@"Data Source=localhost;port=3306;Initial Catalog=application;User=user;Password=pass");
 
         public void ConnectMySql()
         {
