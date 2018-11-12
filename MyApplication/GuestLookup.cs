@@ -8,7 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
-using System.Data.SqlClient;
 
 namespace MyApplication
 {
@@ -23,7 +22,7 @@ namespace MyApplication
 
         private void ButtonGuestSearch_Click_1(object sender, EventArgs e)
         {
-            string name = TextBoxName.Text;
+            string lastname = TextBoxName.Text;
             string firstname = TextBoxFirstName.Text;
             string street = TextBoxStreet.Text;
             string zip = TextBoxZIP.Text;
@@ -31,8 +30,27 @@ namespace MyApplication
             string country = TextBoxCountry.Text;
             string tel = TextBoxTelephone.Text;
 
-            if (name != null)
+            MySqlConnection Con = new MySqlConnection("server=localhost;user id=user;password=pass;database=application");
+
+            if (lastname != null)
             {
+                MySqlCommand cmd = new MySqlCommand("select * from application.guests where lastname = '" + lastname + "'", Con);
+                MySqlDataAdapter dataAdapter = new MySqlDataAdapter(cmd);
+                MySqlDataReader dataReader;
+                Con.Open();
+
+                try
+                {
+                    dataReader = cmd.ExecuteReader();
+                    dataReader.Read();
+
+                    LabelGuest.Text = dataReader[""].ToString();
+                    Con.Close();
+                }
+                catch (MySqlException ex)
+                {
+                    MessageBox.Show("Error: " + ex);
+                }
 
             }
 

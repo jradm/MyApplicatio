@@ -61,7 +61,8 @@ namespace MyApplication
 
         private void ButtonGuestLookup_Click(object sender, EventArgs e)
         {
-
+            GuestLookup guestLookup = new GuestLookup();
+            guestLookup.Show();
         }
     }
 }
