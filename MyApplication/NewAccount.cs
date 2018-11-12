@@ -21,30 +21,58 @@ namespace MyApplication
 
         private void Button1_Click(object sender, EventArgs e)
         {
-            try
-            {
-                MySqlConnection Con = new MySqlConnection("server=localhost;user id=user;password=pass;database=application");
-                MySqlCommand cmd = new MySqlCommand("INSERT INTO `application`.`user` (`username`, `password`) VALUES ('" + TextBoxUsername.Text + "', '" + TextBoxPassword.Text + "')", Con);
-                MySqlDataReader dataReader;
-                Con.Open();
-                dataReader = cmd.ExecuteReader();
-                MessageBox.Show("Login created!");
-                while (dataReader.Read())
+            if (checkedListBox1.SelectedItem.Equals("MySQL DB"))
+            { 
+                try
                 {
-                }
-                Con.Close();
+                    MySqlConnection Con = new MySqlConnection("server=localhost;user id=user;password=pass;database=application");
+                    MySqlCommand cmd = new MySqlCommand("INSERT INTO `application`.`user` (`username`, `password`) VALUES ('" + TextBoxUsername.Text + "', '" + TextBoxPassword.Text + "')", Con);
+                    MySqlDataReader dataReader;
+                    Con.Open();
+                    dataReader = cmd.ExecuteReader();
+                    MessageBox.Show("Login created!");
+                    while (dataReader.Read())
+                    {
+                    }
+                    Con.Close();
                 
-                LoginScreen loginScreen = new LoginScreen();
-                loginScreen.Show();
+                    LoginScreen loginScreen = new LoginScreen();
+                    loginScreen.Show();
 
-                this.Close();
+                    this.Close();
 
+                }
+                catch (MySqlException error)
+                {
+                    MessageBox.Show(error.Message);
+                }
             }
-            catch (MySqlException error)
+            if (checkedListBox1.SelectedItem.Equals("SQL DB"))
             {
-                MessageBox.Show(error.Message);
-            }
+                try
+                {
+                    SqlConnection Con = new SqlConnection("Data Source=localhost;Initial Catalog=Application;User=dbuser;Password=dbpass");
+                    SqlCommand cmd = new SqlCommand("INSERT INTO [dbo].[User] ([Username],[Password]) VALUES ('"+TextBoxUsername.Text+"', '"+TextBoxPassword.Text+"')", Con);
+                    SqlDataReader dataReader;
+                    Con.Open();
+                    dataReader = cmd.ExecuteReader();
+                    MessageBox.Show("Login created!");
+                    while (dataReader.Read())
+                    {
+                    }
+                    Con.Close();
 
+                    LoginScreen loginScreen = new LoginScreen();
+                    loginScreen.Show();
+
+                    this.Close();
+
+                }
+                catch (SqlException error)
+                {
+                    MessageBox.Show(error.Message);
+                }
+            }
         }
     }
 }

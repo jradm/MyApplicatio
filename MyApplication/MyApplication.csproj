@@ -77,6 +77,12 @@
     <Compile Include="Departures.Designer.cs">
       <DependentUpon>Departures.cs</DependentUpon>
     </Compile>
+    <Compile Include="GuestLookup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="GuestLookup.Designer.cs">
+      <DependentUpon>GuestLookup.cs</DependentUpon>
+    </Compile>
     <Compile Include="Inhouse.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -90,7 +96,6 @@
     <Compile Include="Reservations.Designer.cs">
       <DependentUpon>Reservations.cs</DependentUpon>
     </Compile>
-    <Compile Include="Login.cs" />
     <Compile Include="LoginScreen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -114,6 +119,9 @@
     <Compile Include="SqlConnector.cs" />
     <EmbeddedResource Include="CreateReservationScreen.resx">
       <DependentUpon>CreateReservationScreen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="GuestLookup.resx">
+      <DependentUpon>GuestLookup.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginScreen.resx">
       <DependentUpon>LoginScreen.cs</DependentUpon>

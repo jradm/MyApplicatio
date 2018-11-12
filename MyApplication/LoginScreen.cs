@@ -31,7 +31,7 @@ namespace MyApplication
                 MySqlConnector MySqlConnector  = new MySqlConnector();
                 MySqlConnector.ConnectMySql();
 
-                //TODO: MySQL Login
+                //MySQL Login
                 MySqlConnection Con = new MySqlConnection("server=localhost;user id=user;password=pass;database=application");
                 MySqlCommand cmd = new MySqlCommand("select count(*) from application.user where username = '" + textBoxUser.Text + "'and password = '" + textBoxPassword.Text + "'", Con);
                 MySqlDataAdapter dataAdapter = new MySqlDataAdapter(cmd);
@@ -70,11 +70,11 @@ namespace MyApplication
                 SqlConnector.ConnectSql();
 
                 SqlConnection Con = new SqlConnection("Data Source=localhost;Initial Catalog=Application;User=dbuser;Password=dbpass");
-                SqlCommand cmd = new SqlCommand("select count(*) from User where Username = " + textBoxUser.Text + " and Password = " + textBoxPassword.Text + "", Con);
+                SqlCommand cmd = new SqlCommand("select count(*) from [Application].[dbo].[User] where Username = '"+ textBoxUser.Text +"' and Password = '"+ textBoxPassword.Text + "'", Con);
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(cmd);
-                DataTable dataTable = new DataTable();
-                dataAdapter.Fill(dataTable);
-                if (dataTable.Rows[0][0].ToString() == "1")
+                cmd.Connection.Open();
+                SqlDataReader reader = cmd.ExecuteReader(CommandBehavior.CloseConnection);
+                if (reader.Read() == true)
                 {
                     MessageBox.Show("Login successful!");
 

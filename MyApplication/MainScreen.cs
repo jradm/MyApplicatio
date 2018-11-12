@@ -50,11 +50,16 @@ namespace MyApplication
         {
             MySqlConnector MySqlConnector = new MySqlConnector();
             MySqlConnector.DisconnectMySql();
-            //this.Close();
             Application.Exit();
         }
 
         private void ButtonNewReservation_Click(object sender, EventArgs e)
+        {
+            CreateReservationScreen createReservation = new CreateReservationScreen();
+            createReservation.Show();
+        }
+
+        private void ButtonGuestLookup_Click(object sender, EventArgs e)
         {
 
         }

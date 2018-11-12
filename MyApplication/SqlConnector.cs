@@ -13,10 +13,9 @@ namespace MyApplication
 {
     public class SqlConnector
     {
-        //string ConnectionString = "Data Source=localhost;Initial Catalog=Application;User=user;Password=pass";
+       
         SqlConnection Con = new SqlConnection("Data Source=localhost;Initial Catalog=Application;User=dbuser;Password=dbpass");
-        //Con ConnectionString = "Data Source=localhost;Initial Catalog=Application;User=user;Password=pass";
-
+       
         public void ConnectSql()
         {
             try
