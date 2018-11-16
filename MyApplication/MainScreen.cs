@@ -64,5 +64,11 @@ namespace MyApplication
             GuestLookup guestLookup = new GuestLookup();
             guestLookup.Show();
         }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            SettingsScreen settings = new SettingsScreen();
+            settings.Show();
+        }
     }
 }

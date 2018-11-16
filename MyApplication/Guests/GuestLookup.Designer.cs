@@ -44,6 +44,8 @@
             this.TextBoxTelephone = new System.Windows.Forms.TextBox();
             this.ButtonGuestSearch = new System.Windows.Forms.Button();
             this.LabelGuest = new System.Windows.Forms.Label();
+            this.ViewGuestGrid = new System.Windows.Forms.DataGridView();
+            ((System.ComponentModel.ISupportInitialize)(this.ViewGuestGrid)).BeginInit();
             this.SuspendLayout();
             // 
             // TextBoxName
@@ -176,11 +178,23 @@
             this.LabelGuest.Size = new System.Drawing.Size(0, 13);
             this.LabelGuest.TabIndex = 15;
             // 
+            // ViewGuestGrid
+            // 
+            this.ViewGuestGrid.AllowUserToAddRows = false;
+            this.ViewGuestGrid.AllowUserToDeleteRows = false;
+            this.ViewGuestGrid.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ViewGuestGrid.Location = new System.Drawing.Point(438, 74);
+            this.ViewGuestGrid.Name = "ViewGuestGrid";
+            this.ViewGuestGrid.ReadOnly = true;
+            this.ViewGuestGrid.Size = new System.Drawing.Size(333, 196);
+            this.ViewGuestGrid.TabIndex = 16;
+            // 
             // GuestLookup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.ViewGuestGrid);
             this.Controls.Add(this.LabelGuest);
             this.Controls.Add(this.ButtonGuestSearch);
             this.Controls.Add(this.TextBoxTelephone);
@@ -199,6 +213,7 @@
             this.Controls.Add(this.TextBoxName);
             this.Name = "GuestLookup";
             this.Text = "GuestLookup";
+            ((System.ComponentModel.ISupportInitialize)(this.ViewGuestGrid)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -222,5 +237,6 @@
         private System.Windows.Forms.TextBox TextBoxTelephone;
         private System.Windows.Forms.Button ButtonGuestSearch;
         private System.Windows.Forms.Label LabelGuest;
+        private System.Windows.Forms.DataGridView ViewGuestGrid;
     }
 }

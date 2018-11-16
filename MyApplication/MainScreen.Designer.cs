@@ -29,18 +29,20 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.ButtonGuestLookup = new System.Windows.Forms.Button();
             this.ButtonNewReservation = new System.Windows.Forms.Button();
             this.ButtonExit = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.ButtonGuestLookup = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.button5);
             this.panel1.Controls.Add(this.ButtonGuestLookup);
             this.panel1.Controls.Add(this.ButtonNewReservation);
             this.panel1.Controls.Add(this.ButtonExit);
@@ -52,6 +54,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(794, 435);
             this.panel1.TabIndex = 0;
+            // 
+            // ButtonGuestLookup
+            // 
+            this.ButtonGuestLookup.Location = new System.Drawing.Point(179, 161);
+            this.ButtonGuestLookup.Name = "ButtonGuestLookup";
+            this.ButtonGuestLookup.Size = new System.Drawing.Size(100, 79);
+            this.ButtonGuestLookup.TabIndex = 6;
+            this.ButtonGuestLookup.Text = "Guest Lookup";
+            this.ButtonGuestLookup.UseVisualStyleBackColor = true;
+            this.ButtonGuestLookup.Click += new System.EventHandler(this.ButtonGuestLookup_Click);
             // 
             // ButtonNewReservation
             // 
@@ -113,15 +125,15 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // ButtonGuestLookup
+            // button5
             // 
-            this.ButtonGuestLookup.Location = new System.Drawing.Point(179, 161);
-            this.ButtonGuestLookup.Name = "ButtonGuestLookup";
-            this.ButtonGuestLookup.Size = new System.Drawing.Size(100, 79);
-            this.ButtonGuestLookup.TabIndex = 6;
-            this.ButtonGuestLookup.Text = "Guest Lookup";
-            this.ButtonGuestLookup.UseVisualStyleBackColor = true;
-            this.ButtonGuestLookup.Click += new System.EventHandler(this.ButtonGuestLookup_Click);
+            this.button5.Location = new System.Drawing.Point(26, 381);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(75, 23);
+            this.button5.TabIndex = 7;
+            this.button5.Text = "Settings";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
             // MainScreen
             // 
@@ -147,5 +159,6 @@
         private System.Windows.Forms.Button ButtonExit;
         private System.Windows.Forms.Button ButtonNewReservation;
         private System.Windows.Forms.Button ButtonGuestLookup;
+        private System.Windows.Forms.Button button5;
     }
 }

@@ -59,47 +59,60 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Arrivals.cs">
+    <Compile Include="Guests\CreateGuest.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Arrivals.Designer.cs">
+    <Compile Include="Guests\CreateGuest.Designer.cs">
+      <DependentUpon>CreateGuest.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Guests\NoGuestFound.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Guests\NoGuestFound.Designer.cs">
+      <DependentUpon>NoGuestFound.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reservations\Arrivals.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reservations\Arrivals.Designer.cs">
       <DependentUpon>Arrivals.cs</DependentUpon>
     </Compile>
-    <Compile Include="CreateReservationScreen.cs">
+    <Compile Include="Reservations\CreateReservationScreen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="CreateReservationScreen.Designer.cs">
+    <Compile Include="Reservations\CreateReservationScreen.Designer.cs">
       <DependentUpon>CreateReservationScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="Departures.cs">
+    <Compile Include="Reservations\Departures.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Departures.Designer.cs">
+    <Compile Include="Reservations\Departures.Designer.cs">
       <DependentUpon>Departures.cs</DependentUpon>
     </Compile>
-    <Compile Include="GuestLookup.cs">
+    <Compile Include="Enums\PublicEnums.cs" />
+    <Compile Include="Guests\GuestLookup.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="GuestLookup.Designer.cs">
+    <Compile Include="Guests\GuestLookup.Designer.cs">
       <DependentUpon>GuestLookup.cs</DependentUpon>
     </Compile>
-    <Compile Include="Inhouse.cs">
+    <Compile Include="Reservations\Inhouse.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Inhouse.Designer.cs">
+    <Compile Include="Reservations\Inhouse.Designer.cs">
       <DependentUpon>Inhouse.cs</DependentUpon>
     </Compile>
     <Compile Include="MySqlConnector.cs" />
-    <Compile Include="Reservations.cs">
+    <Compile Include="Reservations\Reservations.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Reservations.Designer.cs">
+    <Compile Include="Reservations\Reservations.Designer.cs">
       <DependentUpon>Reservations.cs</DependentUpon>
     </Compile>
-    <Compile Include="LoginScreen.cs">
+    <Compile Include="Login\LoginScreen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="LoginScreen.Designer.cs">
+    <Compile Include="Login\LoginScreen.Designer.cs">
       <DependentUpon>LoginScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="MainScreen.cs">
@@ -108,27 +121,36 @@
     <Compile Include="MainScreen.Designer.cs">
       <DependentUpon>MainScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="NewAccount.cs">
+    <Compile Include="Login\NewAccount.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="NewAccount.Designer.cs">
+    <Compile Include="Login\NewAccount.Designer.cs">
       <DependentUpon>NewAccount.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="CreateReservationScreen.resx">
+    <Compile Include="Settings\SettingsScreen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Settings\SettingsScreen.Designer.cs">
+      <DependentUpon>SettingsScreen.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Guests\NoGuestFound.resx">
+      <DependentUpon>NoGuestFound.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reservations\CreateReservationScreen.resx">
       <DependentUpon>CreateReservationScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="GuestLookup.resx">
+    <EmbeddedResource Include="Guests\GuestLookup.resx">
       <DependentUpon>GuestLookup.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="LoginScreen.resx">
+    <EmbeddedResource Include="Login\LoginScreen.resx">
       <DependentUpon>LoginScreen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainScreen.resx">
       <DependentUpon>MainScreen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="NewAccount.resx">
+    <EmbeddedResource Include="Login\NewAccount.resx">
       <DependentUpon>NewAccount.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -140,8 +162,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Reservations.resx">
+    <EmbeddedResource Include="Reservations\Reservations.resx">
       <DependentUpon>Reservations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Settings\SettingsScreen.resx">
+      <DependentUpon>SettingsScreen.cs</DependentUpon>
     </EmbeddedResource>
     <None Include=".editorconfig" />
     <None Include="packages.config" />
@@ -160,5 +185,6 @@
       <SubType>Designer</SubType>
     </None>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
