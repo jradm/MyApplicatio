@@ -45,6 +45,7 @@
             this.ButtonGuestSearch = new System.Windows.Forms.Button();
             this.LabelGuest = new System.Windows.Forms.Label();
             this.ViewGuestGrid = new System.Windows.Forms.DataGridView();
+            this.ButtonCreatenewguest = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.ViewGuestGrid)).BeginInit();
             this.SuspendLayout();
             // 
@@ -189,11 +190,22 @@
             this.ViewGuestGrid.Size = new System.Drawing.Size(333, 196);
             this.ViewGuestGrid.TabIndex = 16;
             // 
+            // ButtonCreatenewguest
+            // 
+            this.ButtonCreatenewguest.Location = new System.Drawing.Point(561, 37);
+            this.ButtonCreatenewguest.Name = "ButtonCreatenewguest";
+            this.ButtonCreatenewguest.Size = new System.Drawing.Size(113, 23);
+            this.ButtonCreatenewguest.TabIndex = 17;
+            this.ButtonCreatenewguest.Text = "Create new guest";
+            this.ButtonCreatenewguest.UseVisualStyleBackColor = true;
+            this.ButtonCreatenewguest.Click += new System.EventHandler(this.ButtonCreatenewguest_Click);
+            // 
             // GuestLookup
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.ButtonCreatenewguest);
             this.Controls.Add(this.ViewGuestGrid);
             this.Controls.Add(this.LabelGuest);
             this.Controls.Add(this.ButtonGuestSearch);
@@ -238,5 +250,6 @@
         private System.Windows.Forms.Button ButtonGuestSearch;
         private System.Windows.Forms.Label LabelGuest;
         private System.Windows.Forms.DataGridView ViewGuestGrid;
+        private System.Windows.Forms.Button ButtonCreatenewguest;
     }
 }

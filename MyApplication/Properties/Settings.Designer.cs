@@ -32,5 +32,26 @@ namespace MyApplication.Properties {
                 return ((string)(this["ApplicationConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("server=localhost;user id=user;database=application")]
+        public string applicationConnectionString1 {
+            get {
+                return ((string)(this["applicationConnectionString1"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("server=localhost;user id=user;password=pass;persistsecurityinfo=True;database=app" +
+            "lication")]
+        public string applicationConnectionString2 {
+            get {
+                return ((string)(this["applicationConnectionString2"]));
+            }
+        }
     }
 }

@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.ButtonExit = new System.Windows.Forms.Button();
+            this.ButtonCategories = new System.Windows.Forms.Button();
+            this.ButtonRooms = new System.Windows.Forms.Button();
+            this.ButtonRates = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // ButtonExit
@@ -41,13 +44,46 @@
             this.ButtonExit.UseVisualStyleBackColor = true;
             this.ButtonExit.Click += new System.EventHandler(this.ButtonExit_Click);
             // 
-            // Settings
+            // ButtonCategories
+            // 
+            this.ButtonCategories.Location = new System.Drawing.Point(12, 12);
+            this.ButtonCategories.Name = "ButtonCategories";
+            this.ButtonCategories.Size = new System.Drawing.Size(83, 73);
+            this.ButtonCategories.TabIndex = 1;
+            this.ButtonCategories.Text = "Categories";
+            this.ButtonCategories.UseVisualStyleBackColor = true;
+            this.ButtonCategories.Click += new System.EventHandler(this.ButtonCategories_Click);
+            // 
+            // ButtonRooms
+            // 
+            this.ButtonRooms.Location = new System.Drawing.Point(102, 12);
+            this.ButtonRooms.Name = "ButtonRooms";
+            this.ButtonRooms.Size = new System.Drawing.Size(87, 73);
+            this.ButtonRooms.TabIndex = 2;
+            this.ButtonRooms.Text = "Rooms";
+            this.ButtonRooms.UseVisualStyleBackColor = true;
+            this.ButtonRooms.Click += new System.EventHandler(this.ButtonRooms_Click);
+            // 
+            // ButtonRates
+            // 
+            this.ButtonRates.Location = new System.Drawing.Point(12, 91);
+            this.ButtonRates.Name = "ButtonRates";
+            this.ButtonRates.Size = new System.Drawing.Size(83, 73);
+            this.ButtonRates.TabIndex = 3;
+            this.ButtonRates.Text = "Rates";
+            this.ButtonRates.UseVisualStyleBackColor = true;
+            this.ButtonRates.Click += new System.EventHandler(this.ButtonRates_Click);
+            // 
+            // SettingsScreen
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.ButtonRates);
+            this.Controls.Add(this.ButtonRooms);
+            this.Controls.Add(this.ButtonCategories);
             this.Controls.Add(this.ButtonExit);
-            this.Name = "Settings";
+            this.Name = "SettingsScreen";
             this.Text = "Settings";
             this.ResumeLayout(false);
 
@@ -56,5 +92,8 @@
         #endregion
 
         private System.Windows.Forms.Button ButtonExit;
+        private System.Windows.Forms.Button ButtonCategories;
+        private System.Windows.Forms.Button ButtonRooms;
+        private System.Windows.Forms.Button ButtonRates;
     }
 }

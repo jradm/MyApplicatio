@@ -59,6 +59,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Settings\Rooms.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Settings\Rooms.Designer.cs">
+      <DependentUpon>Rooms.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\Rates.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Settings\Rates.Designer.cs">
+      <DependentUpon>Rates.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Settings\Categories.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Settings\Categories.Designer.cs">
+      <DependentUpon>Categories.cs</DependentUpon>
+    </Compile>
     <Compile Include="Guests\CreateGuest.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,6 +153,9 @@
     <Compile Include="Settings\SettingsScreen.Designer.cs">
       <DependentUpon>SettingsScreen.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Guests\CreateGuest.resx">
+      <DependentUpon>CreateGuest.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Guests\NoGuestFound.resx">
       <DependentUpon>NoGuestFound.cs</DependentUpon>
     </EmbeddedResource>

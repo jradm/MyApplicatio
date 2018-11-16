@@ -35,7 +35,7 @@ namespace MyApplication
             MySqlDataAdapter adapter;
             DataTable table;
 
-            if (lastname != null)
+            if (!string.IsNullOrWhiteSpace(lastname))
             {
                 string query = "SELECT * FROM guests WHERE CONCAT(`id`, `lastname`, `firstname`, `street`, `zip`, `city`, `country`, `telephone`) like '%" + lastname + "%'";
                 command = new MySqlCommand(query, connnection);
@@ -52,7 +52,7 @@ namespace MyApplication
             }
             
 
-            if (firstname != null)
+            if (!string.IsNullOrWhiteSpace(firstname))
             {
                 string query = "SELECT * FROM guests WHERE CONCAT(`id`, `lastname`, `firstname`, `street`, `zip`, `city`, `country`, `telephone`) like '%" + firstname + "%'";
                 command = new MySqlCommand(query, connnection);
@@ -68,7 +68,7 @@ namespace MyApplication
                 }
             }
 
-            if (street != null)
+            if (!string.IsNullOrWhiteSpace(street))
             {
                 string query = "SELECT * FROM guests WHERE CONCAT(`id`, `lastname`, `firstname`, `street`, `zip`, `city`, `country`, `telephone`) like '%" + street + "%'";
                 command = new MySqlCommand(query, connnection);
@@ -84,7 +84,7 @@ namespace MyApplication
                 }
             }
 
-            if (zip != null)
+            if (!string.IsNullOrWhiteSpace(zip))
             {
                 string query = "SELECT * FROM guests WHERE CONCAT(`id`, `lastname`, `firstname`, `street`, `zip`, `city`, `country`, `telephone`) like '%" + zip + "%'";
                 command = new MySqlCommand(query, connnection);
@@ -100,7 +100,7 @@ namespace MyApplication
                 }
             }
 
-            if (city != null)
+            if (!string.IsNullOrWhiteSpace(city))
             {
                 string query = "SELECT * FROM guests WHERE CONCAT(`id`, `lastname`, `firstname`, `street`, `zip`, `city`, `country`, `telephone`) like '%" + city + "%'";
                 command = new MySqlCommand(query, connnection);
@@ -116,7 +116,7 @@ namespace MyApplication
                 }
             }
 
-            if (country != null)
+            if (!string.IsNullOrWhiteSpace(country))
             {
                 string query = "SELECT * FROM guests WHERE CONCAT(`id`, `lastname`, `firstname`, `street`, `zip`, `city`, `country`, `telephone`) like '%" + country + "%'";
                 command = new MySqlCommand(query, connnection);
@@ -132,7 +132,7 @@ namespace MyApplication
                 }
             }
 
-            if (tel != null)
+            if (!string.IsNullOrWhiteSpace(tel))
             {
                 string query = "SELECT * FROM guests WHERE CONCAT(`id`, `lastname`, `firstname`, `street`, `zip`, `city`, `country`, `telephone`) like '%" + tel + "%'";
                 command = new MySqlCommand(query, connnection);
@@ -154,5 +154,10 @@ namespace MyApplication
             }
         }
 
+        private void ButtonCreatenewguest_Click(object sender, EventArgs e)
+        {
+            CreateGuest createGuest = new CreateGuest();
+            createGuest.Show();
+        }
     }
 }

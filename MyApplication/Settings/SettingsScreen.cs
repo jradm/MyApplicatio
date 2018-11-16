@@ -21,5 +21,23 @@ namespace MyApplication
         {
             this.Close();
         }
+
+        private void ButtonCategories_Click(object sender, EventArgs e)
+        {
+            Categories categories = new Categories();
+            categories.Show();
+        }
+
+        private void ButtonRooms_Click(object sender, EventArgs e)
+        {
+            Rooms rooms = new Rooms();
+            rooms.Show();
+        }
+
+        private void ButtonRates_Click(object sender, EventArgs e)
+        {
+            Rates rates = new Rates();
+            rates.Show();
+        }
     }
 }
