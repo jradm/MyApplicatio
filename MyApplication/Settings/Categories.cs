@@ -16,5 +16,17 @@ namespace MyApplication
         {
             InitializeComponent();
         }
+
+        private void Categories_Load(object sender, EventArgs e)
+        {
+            // TODO: Diese Codezeile lädt Daten in die Tabelle "applicationDataSet.categories". Sie können sie bei Bedarf verschieben oder entfernen.
+            this.categoriesTableAdapter.Fill(this.applicationDataSet.categories);
+
+        }
+
+        private void ButtonExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

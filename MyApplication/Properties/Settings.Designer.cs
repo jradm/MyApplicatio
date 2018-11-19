@@ -53,5 +53,16 @@ namespace MyApplication.Properties {
                 return ((string)(this["applicationConnectionString2"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("server=localhost;user id=user;database=application;password=pass;persistsecurityi" +
+            "nfo=True")]
+        public string applicationConnectionStringMySQL {
+            get {
+                return ((string)(this["applicationConnectionStringMySQL"]));
+            }
+        }
     }
 }
