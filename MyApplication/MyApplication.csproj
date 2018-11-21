@@ -59,11 +59,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="applicationDataSet3.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>applicationDataSet3.xsd</DependentUpon>
-    </Compile>
     <Compile Include="Settings\Rooms.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -198,17 +193,6 @@
       <DependentUpon>SettingsScreen.cs</DependentUpon>
     </EmbeddedResource>
     <None Include=".editorconfig" />
-    <None Include="applicationDataSet3.xsc">
-      <DependentUpon>applicationDataSet3.xsd</DependentUpon>
-    </None>
-    <None Include="applicationDataSet3.xsd">
-      <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>applicationDataSet3.Designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="applicationDataSet3.xss">
-      <DependentUpon>applicationDataSet3.xsd</DependentUpon>
-    </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
